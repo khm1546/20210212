@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>추억</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/slick.css">
+    <link rel="stylesheet" href="/css/slick-theme.css">
+    <script src="js/slick.js"></script>
+</head>
+<body>
+<script>
+    $(document).ready(function(){
+        
+
+        $(".menu").click(function(){
+            $(".menu_wrap").fadeIn(1000)
+            $(".menu_list").css("width","40%");
+            $("#mask").show();
+        });
+        
+
+        $("#mask").click(function(){
+            $(".menu_wrap").hide()
+            $(".menu_list").css("width","0%");
+            $("#mask").hide();
+        });
+
+        $(".menu_title").click(function(){
+            $(".menu_list > .menu_wrap > ul > li ").slideToggle();
+        });
+
+        $(".rolling").slick({
+            autoplay: true,
+            arrows:false
+        });
+
+        var money = 116500;
+        var now_money = 123000;
+        var hm_money = 932000;
+        var total_money = 932000;
+        $('.plus').text(((now_money / money) * 100 - 100).toFixed(1) + "%");
+
+        var plus = parseInt($(".plus").text());
+        var add_money = (now_money - money) * 8;
+ 
+        $(".money").text(hm_money.toLocaleString())
+        $(".add_money").text("( " + add_money.toLocaleString() + "원" + " )");
+        $(".total").text((hm_money + add_money).toLocaleString() + "원");
+    });
+</script>
+<script>
+    $(document).ready(function(){
+        
+        $("#header").load("/header.html");
+        $("#bottom").load("/bottom.html");
+    });
+</script>
+    <div id="header"></div>
+
+    <section class="rolling">
+        <div><img src="/img/1010_1.jpg"></div>
+        <div><img src="/img/1010_2.jpg"></div>
+        <div><img src="/img/1003_1.jpg"></div>
+        <div><img src="/img/1003_2.jpg"></div>
+    </section>
+    <section class="fast">
+        <h3>문어의 한마디</h3>
+        <p>유진이가 보고싶다 뿡 하는 모습이 보고싶다</p>
+        <p>목요일 밤에 유진이를 본다 유진이랑 닭발먹을생각에 행복하다..크리스마스를 유진이랑 보낸다 너무 좋다!!!!!!</p>
+    </section>
+
+    <div id="bottom"></div>
+</body>
+</html>

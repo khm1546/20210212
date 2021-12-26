@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10월의 추억</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/memory.css">
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            
+    
+            $(".menu").click(function(){
+                $(".menu_wrap").fadeIn(1500)
+                $(".menu_list").css("width","40%");
+                $("#mask").show();
+            });
+            
+    
+            $("#mask").click(function(){
+                $(".menu_wrap").hide()
+                $(".menu_list").css("width","0%");
+                $("#mask").hide();
+            });
+    
+            $(".menu_title").click(function(){
+                $(".menu_list > .menu_wrap > ul > li ").slideToggle();
+            });
+            
+            $(".memory_box").click(function(){
+                var idx = $(this).data("idx");
+                $(".tab_cnt").hide();
+                $("." + idx).show();
+                $("#mask").show();
+            });
+
+            $(".btn").click(function(){
+                $("#mask").hide();
+                $(".tab_cnt").hide();
+            });
+        });
+    </script>
+    <div id="mask"></div>
+    <section class="tab_cnt 1">
+        <div>유진이 단발로 바꾼거 알게된날! 진짜 예쁘더라...너가 싫어할까봐 말은 못하고있는데 진짜 잘 어울리고 예뻐죽겠어ㅠㅠ</div>
+        <div class="img_wrap">
+            <img src="/img/1003_1.jpg">
+            <img src="/img/1003_2.jpg">
+        </div>
+
+        <div class="btn">보고싶어</div>
+    </section>
+    <section class="tab_cnt 2">
+        <div>유진아 한강도 갔다오고 망원동 우동도 먹었잖아ㅋㅋㅋㅋ 근데 너랑 있으니까 진짜 너무 행복한거같아</div>
+        <div class="img_wrap">
+            <img src="/img/1010_1.jpg">
+            <img src="/img/1010_2.jpg">
+        </div>
+
+        <div class="btn">보고싶어</div>
+    </section>
+    <section class="tab_cnt 3">
+        <div>우리 올림픽공원갔던날! 유진이 사진도 겁나 많이찍고 재밌고 행복했던 하루였어!</div>
+        <div class="img_wrap">
+            <img src="/img/1016_1.jpg">
+            <img src="/img/1016_2.jpg">
+        </div>
+
+        <div class="btn">보고싶어</div>
+    </section>
+    <section class="tab_cnt 4">
+        <div>2박3일! 되게 고사다난했지... 방은 겁나멀고ㅋㅋㅋㅋ이찌멘은 브레이크 타임이고..그래도 고기 맛있어서 다행이였어!! 그리고 석촌호수 예쁘더라ㅎㅎ 물론 너보다는 아니지만...유진아 사랑하고 너...그거 안보냈더라? 90점 넘으면 사랑해하는거...</div>
+        <div class="img_wrap">
+            <img src="/img/1031_1.jpg">
+            <img src="/img/1031_2.jpg">
+        </div>
+
+        <div class="btn">보고싶어</div>
+    </section>
+    <script>
+        $(document).ready(function(){
+            
+            $("#header").load("/header.html");
+            $("#bottom").load("/bottom.html");
+        });
+    </script>
+        <div id="header"></div>
+
+    <article class="content">
+        <section class="memory_box" data-idx="4">10월29일 ~ 10월31일</section>
+        <section class="memory_box" data-idx="3">10월16일</section>
+        <section class="memory_box" data-idx="2">10월9일</section>
+        <section class="memory_box" data-idx="1">10월3일 (1박2일)</section>
+    </article>
+
+    <div id="bottom"></div>
+</body>
+</html>

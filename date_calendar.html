@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>데이트 일정</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<script>
+    $(document).ready(function(){
+        
+        $("#header").load("/header.html");
+        $("#bottom").load("/bottom.html");
+    });
+</script>
+    <div id="header"></div>
+
+    <article class="content">
+        <h3>2021. 12. 23  ~ 25 데이트 계획!</h3>
+        <div style="border-bottom:1px solid #CCCCCC; padding-bottom:20px; box-sizing: border-box;">
+            <div style="margin-top:20px;">음식 (중요)</div>
+
+            <section style="margin-top:10px;">
+                <span>23일 야식 : </span>
+                <span>닭발!!</span>
+            </section>
+
+            <section style="margin-top:10px;">
+                <span>24일 아침 : </span>
+                <span>움...아직 모르겠어</span>
+            </section>
+
+            <section style="margin-top:10px;">
+                <span>24일 저녁 : </span>
+                <span>새우상회!!</span>
+            </section>
+
+            <section style="margin-top:10px;">
+                <span>25일 아점 : </span>
+                <span>뭐먹지...고기!!</span>
+            </section>
+        </div>
+    </article>
+    <div id="bottom"></div>
+</body>
+</html>

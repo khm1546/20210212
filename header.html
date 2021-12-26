@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/slick.css">
+    <link rel="stylesheet" href="/css/slick-theme.css">
+    <script src="js/slick.js"></script>
+</head>
+<body>
+<script>
+    $(document).ready(function(){
+        
+        var today = new Date();
+        var dday = new Date('2021, 02, 12');
+        var gap = today.getTime()-dday.getTime();
+        var result = Math.ceil(gap/ (1000*60*60*24));
+        var ment = ["행복한 " + result + " 일", "유진아 사랑해", "너가 최고야", result + "일이야!"]
+
+
+        $(".date").text("여기 잘봐바");
+
+        setInterval(function(){
+            var idx = Math.floor(Math.random() * ment.length);
+            var value = ment[idx]; 
+            $(".date").text(value);
+        },5000);
+        $(".menu").click(function(){
+            $(".menu_wrap").fadeIn(1000)
+            $(".menu_list").css("width","40%");
+            $("#mask").show();
+        });
+        
+
+        $("#mask").click(function(){
+            $(".menu_wrap").hide()
+            $(".menu_list").css("width","0%");
+            $("#mask").hide();
+        });
+
+        $(".menu_title").click(function(){
+            $(".menu_list > .menu_wrap > ul > li ").slideToggle();
+        });
+
+        $(".rolling").slick({
+            autoplay: true,
+            arrows:false
+        });
+        
+    });
+</script>
+<div id="mask"></div>
+    <header>
+        <ul>
+            <li class="menu"><img src="/img/menu.png"></li>
+            <li class="logo">우리둘의 추억</li>
+            <li class="date" style="text-align:right; font-size:12px;"></li>
+        </ul>
+    </header>
+    <section class="menu_list">
+        <div class="menu_wrap">
+            <div class="love" onclick="location.href='/index.html'">메인</div>
+            <div class="menu_title">월별 추억</div>
+            <ul>
+                <li onclick="location.href='/October.html'">10월</li>
+                <li onclick="location.href='/nomember.html'">11월</li>
+                <li onclick="location.href='/December.html'">12월</li>
+            </ul>
+            <div class="calendar" onClick="location.href='/date_calendar.html'">데이트 일정</div>
+        </div>
+    </section>
+</body>
+</html>

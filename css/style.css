@@ -1,0 +1,187 @@
+@charset 'utf-8';
+
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+    padding:0;
+    margin:0;
+}
+
+#mask {
+    width:100%;
+    height:100%;
+    z-index:5;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+body,html {
+    height:100%;
+    padding:0;
+    margin:0;
+    background: #e2e2e2;
+}
+
+ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+header {
+    width:100%;
+    height:70px;
+    padding:20px;
+    box-sizing:border-box;
+    background: #FFFFFF;
+}
+
+header > ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header > ul > li {
+    width:33%;
+    text-align:center;
+    font-size:14px;
+}
+
+.menu {
+    text-align: left;
+}
+
+.menu img{
+    width:30%;
+}
+
+
+.menu_list {
+    width:0;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    background: #FFFFFF;
+    z-index:10;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+.menu_wrap {
+    display:none;
+}
+
+.menu_list > .menu_wrap > ul > li {
+    margin-top:20px;
+    border-bottom:1px solid #ccc;
+    padding-left:20px;
+    padding-bottom:20px;
+    box-sizing: border-box;
+    display: none;
+}
+
+.menu_title {
+    padding:20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+}
+
+.content {
+    padding:20px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    height: 80%;
+}
+
+.rolling {
+    width:100%;
+}
+
+.rolling  img {
+    width:100%;
+    height:200px;
+    box-sizing: border-box;
+    margin-top:10px;
+}
+
+.menu_wrap > div {
+    padding:20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+    font-size:14px;
+}
+
+.yujin{
+    margin-top:20px;
+}
+
+.yujin > .title {
+    font-weight: bold;
+}
+
+.yujin table {
+    font-size:14px;
+    border-collapse: collapse;
+    text-align: center;
+    margin:0 auto;
+    margin-top:20px;
+}
+
+tb,th {
+    padding:10px;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color:pink;
+}
+
+.fast {
+    width:100%;
+    height:200px;
+    background: #FFFFFF;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.bottom {
+    width:100%;
+    height:150px;
+    background: gray;
+    color:#FFFFFF;
+    padding:20px;
+    box-sizing: border-box;
+    font-size:14px;
+
+    position: absolute;
+    bottom: 0;
+}
+
+.bottom > div:first-child {
+    margin-top:0;
+}
+
+.bottom > div {
+    margin-top:10px;
+}
+
+.plus {
+    color:red;
+}
+
+.add_money {
+    color:red;
+    font-size:12px;
+}
+
+.total_money {
+    position: absolute;
+    bottom:20px;
+    right:20px;
+}
